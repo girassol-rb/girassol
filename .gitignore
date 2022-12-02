@@ -1,3 +1,9 @@
+# I'm a lib, not an app
+Gemfile.lock
+
+.*.swp
+.*.swo
+
 *.gem
 *.rbc
 /.config
