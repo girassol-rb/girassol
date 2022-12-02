@@ -23,7 +23,6 @@ class App
     
     i = 0
 
-    p(@@f.length())
     while i < @@f.length()
       @@f.at(i).resume()
       i += 1
