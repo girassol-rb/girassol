@@ -1,8 +1,8 @@
 # girassol
 A non-opnionated HTTP server in ruby
 
-<div>
-    <img src="assets/girassol.svg" width="400" height="400" alt="girassol logo">
+<div style='background: no-repeat; background-size:contain; background-image: url("assets/girassol.png"); height:400px;'>
+    <img src="assets/girassol.svg" alt="girassol logo">
 </div>
 
 ## Goals of girassol
