@@ -1,0 +1,40 @@
+<svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+	<foreignObject width="100%" height="100%">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<style>
+				@keyframes carousel {
+					0% {
+    background-image: url("girassol.png");
+}
+25% {
+    background-image: url("girassol-girl1.png");
+}
+50% {
+    background-image: url("girassol-girl2.png");
+}
+75% {
+    background-image: url("girassol-kisses.png");
+}
+100% {
+    background-image: url("girassol-steampunk.png");
+}
+				}
+				.girassol {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					margin: 0;
+					width: 100%;
+					height: 400px;
+					background-image: url("girassol.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+					animation: carousel 10s linear infinite;
+				}
+			</style>
+			<div class="girassol">
+			</div>
+		</div>
+	</foreignObject>
+</svg>
