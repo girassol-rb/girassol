@@ -2,13 +2,18 @@
 
 GIRASSOLES=( girassol*.png )
 
+create_base_64() {
+    echo -n "data:image/png;base64,"
+    base64 "$1" | tr -d $"\r\n"
+}
+
 create_frame() {
     local image="$1"
     local progression="$2"
 
     cat <<FRAME
 $progression% {
-    background-image: url("$image");
+    background-image: url("`create_base_64 "$image"`");
 }
 FRAME
 }
@@ -41,7 +46,7 @@ cat <<EOG
 					margin: 0;
 					width: 100%;
 					height: 400px;
-					background-image: url("girassol.png");
+					background-image: url("`create_base_64 girassol.png`");
                     background-repeat: no-repeat;
                     background-size: contain;
 					animation: carousel 10s linear infinite;
