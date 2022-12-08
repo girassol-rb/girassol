@@ -1,7 +1,9 @@
 # girassol
 A non-opnionated HTTP server in ruby
 
-![girassol-logo](assets/girassol.png)
+<div style='background: no-repeat; background-size:contain; background-image: url("assets/girassol.png"); height:400px;'>
+    <img src="assets/girassol.svg" alt="girassol logo">
+</div>
 
 ## Goals of girassol
 
@@ -21,8 +23,10 @@ And of course, girassol aims to be 100% compatible with Ruby-on-Rails.
 
 ## Logo
 
-The girassol logo was created by [Pedro Arantes](https://github.com/arantespp).
-Folow the creator in social media:
+Some of the girassol logos were created by
+[Pedro Arantes](https://github.com/arantespp). Folow the creator in social media:
 
 - [Twitter](https://twitter.com/arantespp)
 - [Instagram](https://www.instagram.com/arantespp.art/)
+
+All girassol logos under CC-BY-NC.
