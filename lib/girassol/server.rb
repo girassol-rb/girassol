@@ -4,7 +4,7 @@ require 'socket'
 
 module Girassol
     class Server
-        attr_reader :port
+        attr_reader :port, :socket
         def initialize(port:nil)
             @port = port
         end

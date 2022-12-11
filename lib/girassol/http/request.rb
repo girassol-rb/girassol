@@ -3,31 +3,36 @@
 module Girassol
     module HTTP
         class Request
-            attr_reader :method, :route , :headers
+            attr_reader :method, :route
+            attr_accessor :headers
 
-            def initialize
+            def initialize(method, route)
+                @method = method
+                @route = route
                 @headers = Hash.new
             end
 
             def self.parse(client)
-                req = Request.new
                 first_line = client.gets.split(" ")
                 if first_line[2] != "HTTP/1.1"
                     # TODO: return 400 on the request
                     return
                 end
-                req.method = first_line[0]
-                req.route = first_line[1]
+                method = first_line[0]
+                route = first_line[1]
+
+                req = Request.new(method, route)
 
                 while true
-                    header = client.gets
-                    if header == "/r/n"
+                    line = client.gets
+                    if line == "\r\n"
+                        p("Breaked")
                         break
                     end
-                    header = header.split ":"
-                    req.headers.store(header[0], header[1])
+                    splitted_line = line.split ":"
+                    req.headers.store(splitted_line[0], splitted_line[1].strip)
                 end
-                
+
                 req
             end
         end
