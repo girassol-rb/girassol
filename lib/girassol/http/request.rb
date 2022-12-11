@@ -9,14 +9,15 @@ module Girassol
                 @headers = Hash.new
             end
 
-            def parse(client)
+            def self.parse(client)
+                req = Request.new
                 first_line = client.gets.split(" ")
                 if first_line[2] != "HTTP/1.1"
                     # TODO: return 400 on the request
                     return
                 end
-                @method = first_line[0]
-                @route = first_line[1]
+                req.method = first_line[0]
+                req.route = first_line[1]
 
                 while true
                     header = client.gets
@@ -24,7 +25,10 @@ module Girassol
                         break
                     end
                     header = header.split ":"
-                    headers.store(header[0], header[1])
+                    req.headers.store(header[0], header[1])
+                end
+                
+                req
             end
         end
     end
